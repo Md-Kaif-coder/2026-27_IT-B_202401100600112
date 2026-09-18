@@ -1951,6 +1951,6 @@ If you find this project useful or interesting:
 
 <br>
 
-**Made with ❤️ by Md. Kaif**
+**Made with ❤️ by Md. Kaif , Ritesh Yadav and Mohammad Maksood**
 
 </p>
