@@ -202,4 +202,216 @@ When a student applies for a placement drive:
 
 1. The student selects a drive in the frontend.
 2. The frontend sends an HTTP request to the Spring Boot API.
-3. The controller validates the request and delegates
+3. The controller validates the request and delegates processing.
+4. The service checks eligibility and whether an application already exists.
+5. The repository interacts with PostgreSQL to save the application.
+6. The backend returns a response.
+7. The frontend displays the outcome.
+
+### 6.4 Why Use a Modular Monolith?
+
+- Simpler initial development and deployment.
+- Clear separation of responsibilities.
+- Easier local testing and debugging.
+- Lower operational complexity than microservices.
+- Ability to introduce independent services later if real requirements justify them.
+
+## 7. Testing Reports and Demonstration
+
+### 7.1 Unit Testing
+
+Unit tests verify individual methods or components.
+
+Example: Testing whether a student meets a minimum CGPA criterion.
+
+| Input CGPA | Minimum CGPA | Expected Result |
+|---:|---:|---|
+| 8.2 | 7.0 | Eligible for the CGPA criterion |
+| 7.0 | 7.0 | Eligible for the CGPA criterion |
+| 6.5 | 7.0 | Not eligible |
+
+### 7.2 Integration Testing
+
+Integration tests verify interactions between components, such as:
+
+- Controller and service.
+- Service and repository.
+- Repository and database.
+- Authentication and authorization.
+
+### 7.3 Functional Testing
+
+Functional tests verify registration, login, drive browsing, eligibility checks, application submission, and reporting.
+
+### 7.4 Performance Testing
+
+Load testing measures performance under an expected workload. Stress testing increases workload beyond the expected operating level to identify degradation and limits.
+
+Useful metrics include:
+
+- Response time.
+- Throughput.
+- Error rate.
+- CPU and memory utilization.
+- p95 and p99 response times.
+
+### 7.5 Testing Demonstration Checklist
+
+- [ ] Show the documented test cases.
+- [ ] Demonstrate a valid workflow if implemented.
+- [ ] Demonstrate an invalid-input or authorization scenario if implemented.
+- [ ] Show actual JUnit test results, if tests have been run.
+- [ ] Show actual API test results, if available.
+- [ ] Present JMeter measurements only if a performance test has been executed.
+- [ ] Explain any known defects or incomplete features honestly.
+
+**Important:** The test scenarios above describe expected behavior. They should not be presented as successful execution results without supporting evidence.
+
+## 8. Final Project Demonstration Plan
+
+A short demonstration can follow this sequence:
+
+| Step | Demonstration | Purpose |
+|---|---|---|
+| 1 | Introduce the problem statement | Explain why the system is needed |
+| 2 | Present the SRS and actors | Establish requirements and user roles |
+| 3 | Explain the use case diagram | Show system functionality |
+| 4 | Explain the class diagram | Show domain entities and relationships |
+| 5 | Present the architecture diagram | Explain component responsibilities |
+| 6 | Demonstrate implemented features | Show actual system behavior |
+| 7 | Present testing documentation | Explain test coverage and results |
+| 8 | Discuss limitations and future scope | Show awareness of remaining work |
+
+If a feature is not implemented, present its design or prototype clearly rather than describing it as a working feature.
+
+## 9. Final Documentation Checklist
+
+The final submission should include:
+
+- [ ] Project title and problem statement.
+- [ ] Software Requirements Specification.
+- [ ] Functional and non-functional requirements.
+- [ ] Use case diagram.
+- [ ] Class diagram.
+- [ ] Sequence diagram.
+- [ ] Activity diagram.
+- [ ] System architecture diagram.
+- [ ] Test case document.
+- [ ] Unit and integration testing documentation.
+- [ ] Functional and performance testing report.
+- [ ] Agile backlog or Sprint Board evidence.
+- [ ] Design review findings.
+- [ ] Final conclusion and future scope.
+
+## 10. Future Scope
+
+Possible future enhancements include:
+
+- Automated notifications for placement updates.
+- More detailed placement analytics.
+- Integration with external recruitment platforms.
+- Improved resume management.
+- Advanced audit logging.
+- Performance optimization based on measured bottlenecks.
+- Microservices adoption if justified by future scale and deployment needs.
+
+These are proposed enhancements, not current system capabilities unless implemented.
+
+## 11. Industry Mapping: Client Demo and Technical Presentation
+
+Industry project demonstrations communicate business value, technical decisions, evidence of functionality, limitations, and future plans to stakeholders.
+
+| Industry Practice | Application in the Project |
+|---|---|
+| Problem Presentation | Explain the placement-management problem |
+| Requirement Review | Present the SRS and user roles |
+| Technical Walkthrough | Explain UML models and architecture |
+| Live Demonstration | Show implemented features using realistic test data |
+| Quality Evidence | Present actual test results and known defects |
+| Stakeholder Communication | Use clear explanations and answer questions |
+| Risk Communication | Disclose limitations and unresolved issues |
+| Documentation Handover | Submit the SRS, design documents, and testing reports |
+
+### Presentation Guidelines
+
+1. Start with the problem and intended users.
+2. Explain the solution before discussing implementation details.
+3. Use diagrams to make technical concepts understandable.
+4. Demonstrate only verified functionality.
+5. Explain why the chosen architecture is appropriate.
+6. Present testing evidence accurately.
+7. Acknowledge limitations and explain practical next steps.
+
+## 12. Viva Questions and Answers
+
+**Q1. What is the Student Placement Management System?**
+
+It is a proposed web application that centralizes student profiles, placement drives, applications, interviews, offers, and placement reporting.
+
+**Q2. What is an SRS?**
+
+A Software Requirements Specification documents the system's functional and non-functional requirements, interfaces, constraints, and expected behavior.
+
+**Q3. Why is UML used?**
+
+UML helps visualize and communicate system structure, behavior, interactions, and workflows.
+
+**Q4. What is the difference between a class diagram and a sequence diagram?**
+
+A class diagram shows the static structure of classes and their relationships. A sequence diagram shows time-ordered interactions between participants.
+
+**Q5. Why is layered architecture useful?**
+
+It separates responsibilities, making the application easier to understand, test, and maintain.
+
+**Q6. Why is a modular monolith recommended initially?**
+
+It offers clear module boundaries without the deployment and communication overhead of multiple independent services.
+
+**Q7. What is unit testing?**
+
+Unit testing checks an individual method or component independently.
+
+**Q8. What is integration testing?**
+
+Integration testing checks whether multiple components work correctly together.
+
+**Q9. What is regression testing?**
+
+Regression testing verifies that existing functionality continues to work after changes.
+
+**Q10. What is load testing?**
+
+Load testing measures application behavior under a specified expected workload.
+
+**Q11. What is stress testing?**
+
+Stress testing pushes the system beyond its expected operating workload to identify limits and failure behavior.
+
+**Q12. How can duplicate applications be prevented?**
+
+The system can check for an existing application and enforce an appropriate database uniqueness constraint, with transaction-safe handling of concurrent requests.
+
+**Q13. What is the purpose of a Scrum board?**
+
+A Scrum board helps visualize Sprint Backlog work and track its progress.
+
+**Q14. What would you improve in the project in the future?**
+
+I would prioritize security, requirement traceability, automated testing, performance measurement, and improvements based on stakeholder feedback.
+
+**Q15. How do you know the project is ready for release?**
+
+Readiness should be based on agreed acceptance criteria, completed required functionality, relevant test evidence, resolved or accepted risks, and stakeholder approval.
+
+## 13. Conclusion
+
+This experiment consolidates the final project documentation and prepares the Student Placement Management System for a structured technical presentation and viva.
+
+The report reviews requirements, UML models, architecture, testing documentation, and industry presentation practices. It also provides a demonstration plan and viva questions to support clear communication of the proposed design.
+
+## 14. Result
+
+The Final Project Documentation was prepared for the Student Placement Management System, including an SRS summary, UML model explanations, architecture walkthrough, testing review, demonstration checklist, and viva preparation material.
+
+Actual implementation status, test results, and final approval should be documented using verified project evidence.
