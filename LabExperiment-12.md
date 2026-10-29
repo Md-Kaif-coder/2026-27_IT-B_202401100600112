@@ -254,4 +254,68 @@ Regression testing helps detect such unintended side effects.
 6. Record and investigate failures.
 7. Re-run affected tests after fixes.
 
-Automating repeatable regression tests
+Automating repeatable regression tests using JUnit and a CI pipeline can help detect defects earlier.
+
+## 11. Suggested Tool Usage
+
+### Apache JMeter
+
+JMeter can simulate concurrent virtual users and generate load against supported HTTP endpoints.
+
+Suggested workflow:
+
+1. Create a Test Plan.
+2. Add a Thread Group.
+3. Configure the number of virtual users and ramp-up period.
+4. Add HTTP Request samplers for relevant API endpoints.
+5. Add assertions to validate responses.
+6. Run the test against the authorized test environment.
+7. Review response times, throughput, and errors.
+
+### Postman
+
+Postman can be used to test REST API functionality, validate response codes, inspect response bodies, and organize repeatable API tests.
+
+### JUnit
+
+JUnit can automate unit tests and support integration testing within a Java/Spring Boot project.
+
+*Tool configuration and actual execution results should be documented separately once the application is available for testing.*
+
+## 12. Industry Mapping: Quality Assurance Engineering
+
+Quality Assurance Engineering applies systematic processes and testing techniques to improve software correctness, reliability, performance, and maintainability.
+
+| Industry Practice | Application in the Project |
+|---|---|
+| Requirement-Based Testing | Mapping functional requirements to test cases |
+| Black-Box Testing | Verifying observable application behavior |
+| Functional Testing | Checking registration, applications, and reports |
+| Load Testing | Evaluating expected concurrent usage |
+| Stress Testing | Identifying performance limits and recovery behavior |
+| Regression Testing | Rechecking existing features after code changes |
+| Defect Management | Recording failures and tracking fixes |
+| Performance Monitoring | Measuring latency, throughput, errors, and resource use |
+| Test Automation | Running repeatable tests during development and CI |
+| Release Readiness | Reviewing functional and performance evidence before release |
+
+## 13. Expected Outcomes
+
+After completing this experiment, the following outcomes are expected:
+
+- Understanding of black-box and functional testing.
+- A documented set of functional test cases.
+- Understanding of load and stress testing.
+- A proposed performance test plan with measurable targets.
+- Understanding of regression testing and its workflow.
+- Familiarity with the role of testing tools in Quality Assurance Engineering.
+
+## 14. Conclusion
+
+This experiment prepared a Testing Report for the proposed Student Placement Management System. It covered black-box testing techniques, functional test scenarios, performance testing concepts, load and stress testing, and regression testing.
+
+These techniques help verify that the application meets its requirements, performs acceptably under defined workloads, and continues to function correctly after changes.
+
+## 15. Result
+
+The Testing Report was prepared with illustrative functional test cases, black-box testing scenarios, a performance test plan, and regression test cases. Actual pass/fail results and performance measurements must be recorded after execution in the test environment.
